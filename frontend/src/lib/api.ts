@@ -1,4 +1,14 @@
-export const API_URL = 'http://localhost:8000'; // Browser view of backend
+const getBaseUrl = () => {
+    if (typeof window !== 'undefined') {
+        const host = window.location.hostname;
+        // Assume Backend is always on port 8000 alongside Frontend
+        return `http://${host}:8000`;
+    }
+    return 'http://localhost:8000';
+};
+
+export const API_URL = getBaseUrl();
+
 
 // Server-side fetching helper if needed (Next.js server component to Backend)
 export const INTERNAL_API_URL = 'http://127.0.0.1:8000';

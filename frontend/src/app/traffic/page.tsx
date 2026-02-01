@@ -90,7 +90,10 @@ export default function TrafficPage() {
 
     // --- WEBSOCKET CONNECTION ---
     useEffect(() => {
-        const wsUrl = "ws://localhost:8000/ws/traffic"; // Hardcoded for demo
+        // Dynamic WebSocket URL
+        const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+        const host = window.location.hostname;
+        const wsUrl = `${protocol}//${host}:8000/ws/traffic`;
 
         const connect = () => {
             const ws = new WebSocket(wsUrl);
