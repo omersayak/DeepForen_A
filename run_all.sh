@@ -83,7 +83,7 @@ fi
 # Ensure .env exists
 if [ ! -f ".env" ]; then
     echo -e "${YELLOW}   Creating default .env file...${NC}"
-    echo "DATABASE_URL=postgresql+asyncpg://user:password@localhost/netgraph" > .env
+    echo "DATABASE_URL=postgresql+asyncpg://postgres:password@localhost:5433/netgraph_sentinel" > .env
     echo "SECRET_KEY=supersecretdevkey" >> .env
     echo "ALGORITHM=HS256" >> .env
     echo "ACCESS_TOKEN_EXPIRE_MINUTES=30" >> .env

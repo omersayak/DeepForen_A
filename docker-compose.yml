@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: netgraph_sentinel
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: always
@@ -18,7 +18,7 @@ services:
     image: redis:alpine
     container_name: netgraph_redis
     ports:
-      - "6379:6379"
+      - "6380:6379"
     restart: always
 
 volumes:
