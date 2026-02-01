@@ -82,11 +82,9 @@ if [ ! -d "node_modules" ]; then
     npm install
 fi
 
-echo -e "${GREEN}   Starting Dashboard (0.0.0.0:3000)...${NC}"
-# Pass -H 0.0.0.0 to next dev to allow external access
-# npm run dev -- -H 0.0.0.0
-# Note: 'npm run dev' runs 'next dev'. We append args after --
-npm run dev -- -H 0.0.0.0
+echo -e "${GREEN}   Starting Dashboard (0.0.0.0:3140)...${NC}"
+# Pass -H 0.0.0.0 to next dev to allow external access, and -p 3140 for custom port
+npm run dev -- -H 0.0.0.0 -p 3140
 
 # Cleanup on exit
 cleanup
