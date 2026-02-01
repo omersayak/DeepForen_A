@@ -1,16 +1,8 @@
-const getBaseUrl = () => {
-    if (typeof window !== 'undefined') {
-        const host = window.location.hostname;
-        // Assume Backend is always on port 8000 alongside Frontend
-        return `http://${host}:8000`;
-    }
-    return 'http://localhost:8000';
-};
+// Use relative /api path which is proxied by Next.js rewrites in next.config.ts
+// This avoids port 8000 firewall issues on remote servers.
+export const API_URL = typeof window !== 'undefined' ? '/api' : 'http://127.0.0.1:8000';
 
-export const API_URL = getBaseUrl();
-
-
-// Server-side fetching helper if needed (Next.js server component to Backend)
+// Server-side fetching helper
 export const INTERNAL_API_URL = 'http://127.0.0.1:8000';
 
 export async function triggerScan(target: string = "192.168.1.0/24") {
