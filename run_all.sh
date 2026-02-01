@@ -16,9 +16,32 @@ echo -e "${BLUE}🚀 Initializing NetGraph Sentinel (Auto-Deploy Mode)...${NC}"
 # --- 1. SYSTEM CHECKS ---
 check_command() {
     if ! command -v $1 &> /dev/null; then
-        echo -e "${RED}❌ Error: '$1' is not installed or not in PATH.${NC}"
-        echo -e "${YELLOW}Please install $1 before running this script.${NC}"
-        exit 1
+        echo -e "${RED}❌ Error: '$1' is not installed.${NC}"
+        
+        # Auto-Install Logic for Docker
+        if [ "$1" == "docker" ]; then
+            echo -e "${YELLOW}Docker is crucial for the database. Accessing deployment tools...${NC}"
+            echo -ne "${BLUE}❓ Attempt to install Docker automatically? (This requires sudo) [y/N]: ${NC}"
+            read -r response
+            if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+                echo -e "${GREEN}🔄 Downloading and running Docker installer...${NC}"
+                curl -fsSL https://get.docker.com -o get-docker.sh
+                sudo sh get-docker.sh
+                
+                echo -e "${GREEN}👤 Adding current user to 'docker' group...${NC}"
+                sudo usermod -aG docker $USER
+                
+                echo -e "${YELLOW}⚠️  Docker installed! You MUST log out and log back in for group changes to take effect.${NC}"
+                echo -e "${YELLOW}👉 Run the command 'newgrp docker' right now to update current session, then re-run this script.${NC}"
+                exit 0
+            else
+                echo -e "${RED}Please install Docker manually and return.${NC}"
+                exit 1
+            fi
+        else
+            echo -e "${YELLOW}Please install $1 before running this script.${NC}"
+            exit 1
+        fi
     fi
 }
 
