@@ -1,0 +1,127 @@
+INFO:     Will watch for changes in these directories: ['/home/profesor/Desktop/PROJECT/TopologyProject/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [93794] using WatchFiles
+/home/profesor/Desktop/PROJECT/TopologyProject/backend/app/core/ai_engine.py:3: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+INFO:     Started server process [93797]
+INFO:     Waiting for application startup.
+2026-02-01 22:48:33,465 INFO sqlalchemy.engine.Engine select pg_catalog.version()
+2026-02-01 22:48:33,465 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-02-01 22:48:33,467 INFO sqlalchemy.engine.Engine select current_schema()
+2026-02-01 22:48:33,468 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-02-01 22:48:33,469 INFO sqlalchemy.engine.Engine show standard_conforming_strings
+2026-02-01 22:48:33,469 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-02-01 22:48:33,470 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-02-01 22:48:33,473 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-02-01 22:48:33,473 INFO sqlalchemy.engine.Engine [generated in 0.00022s] ('devices', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-02-01 22:48:33,478 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-02-01 22:48:33,478 INFO sqlalchemy.engine.Engine [cached since 0.004946s ago] ('logs', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-02-01 22:48:33,479 INFO sqlalchemy.engine.Engine COMMIT
+WARNING:app.core.scanning.engine:Could not update Mac Vendor Database: this event loop is already running.
+INFO:app.core.scanning.engine:⬇️ Updating Mac Vendor Database...
+WARNING:app.core.scanning.engine:Failed to update mac vendor DB: this event loop is already running.
+INFO:app.core.scanning.sniffer:Starting Advanced Packet Simulation (Wireshark Mode)...
+INFO:     Application startup complete.
+INFO:app.core.scanning.sniffer:Sniffer binding to dynamic context: 192.168.1.100
+INFO:     127.0.0.1:46242 - "WebSocket /ws/traffic" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:46256 - "GET /system/connections HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46256 - "GET /system/connections HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46256 - "GET /system/connections HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46256 - "GET /system/connections HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46256 - "GET /system/connections HTTP/1.1" 200 OK
+2026-02-01 22:48:46,967 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2026-02-01 22:48:46,979 INFO sqlalchemy.engine.Engine SELECT devices.id, devices.ip_address, devices.mac_address, devices.hostname, devices.os_type, devices.role, devices.risk_score, devices.last_seen, devices.meta 
+FROM devices
+INFO:sqlalchemy.engine.Engine:SELECT devices.id, devices.ip_address, devices.mac_address, devices.hostname, devices.os_type, devices.role, devices.risk_score, devices.last_seen, devices.meta 
+FROM devices
+2026-02-01 22:48:46,979 INFO sqlalchemy.engine.Engine [generated in 0.00046s] ()
+INFO:sqlalchemy.engine.Engine:[generated in 0.00046s] ()
+INFO:     127.0.0.1:40090 - "GET /system/connections HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40090 - "GET /system/connections HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46256 - "POST /sentinel/ask HTTP/1.1" 200 OK
+2026-02-01 22:48:50,476 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:     127.0.0.1:46256 - "GET /system/connections HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46256 - "GET /system/connections HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46256 - "GET /threat/virustotal?target=20.249.159.133 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46256 - "GET /system/connections HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46256 - "GET /system/connections HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46256 - "GET /system/connections HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46256 - "GET /system/connections HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46256 - "GET /system/connections HTTP/1.1" 200 OK
+INFO:     connection closed
+2026-02-01 22:49:05,505 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2026-02-01 22:49:05,505 INFO sqlalchemy.engine.Engine SELECT devices.id, devices.ip_address, devices.mac_address, devices.hostname, devices.os_type, devices.role, devices.risk_score, devices.last_seen, devices.meta 
+FROM devices
+INFO:sqlalchemy.engine.Engine:SELECT devices.id, devices.ip_address, devices.mac_address, devices.hostname, devices.os_type, devices.role, devices.risk_score, devices.last_seen, devices.meta 
+FROM devices
+2026-02-01 22:49:05,505 INFO sqlalchemy.engine.Engine [cached since 18.53s ago] ()
+INFO:sqlalchemy.engine.Engine:[cached since 18.53s ago] ()
+INFO:     127.0.0.1:46256 - "GET /devices HTTP/1.1" 200 OK
+2026-02-01 22:49:05,508 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+2026-02-01 22:49:05,516 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2026-02-01 22:49:05,516 INFO sqlalchemy.engine.Engine SELECT devices.id, devices.ip_address, devices.mac_address, devices.hostname, devices.os_type, devices.role, devices.risk_score, devices.last_seen, devices.meta 
+FROM devices
+INFO:sqlalchemy.engine.Engine:SELECT devices.id, devices.ip_address, devices.mac_address, devices.hostname, devices.os_type, devices.role, devices.risk_score, devices.last_seen, devices.meta 
+FROM devices
+2026-02-01 22:49:05,517 INFO sqlalchemy.engine.Engine [cached since 18.54s ago] ()
+INFO:sqlalchemy.engine.Engine:[cached since 18.54s ago] ()
+INFO:     127.0.0.1:46256 - "GET /devices HTTP/1.1" 200 OK
+2026-02-01 22:49:05,521 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+2026-02-01 22:49:05,553 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2026-02-01 22:49:05,554 INFO sqlalchemy.engine.Engine SELECT devices.id, devices.ip_address, devices.mac_address, devices.hostname, devices.os_type, devices.role, devices.risk_score, devices.last_seen, devices.meta 
+FROM devices
+INFO:sqlalchemy.engine.Engine:SELECT devices.id, devices.ip_address, devices.mac_address, devices.hostname, devices.os_type, devices.role, devices.risk_score, devices.last_seen, devices.meta 
+FROM devices
+2026-02-01 22:49:05,554 INFO sqlalchemy.engine.Engine [cached since 18.58s ago] ()
+INFO:sqlalchemy.engine.Engine:[cached since 18.58s ago] ()
+2026-02-01 22:49:05,555 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2026-02-01 22:49:05,555 INFO sqlalchemy.engine.Engine SELECT devices.id, devices.ip_address, devices.mac_address, devices.hostname, devices.os_type, devices.role, devices.risk_score, devices.last_seen, devices.meta 
+FROM devices
+INFO:sqlalchemy.engine.Engine:SELECT devices.id, devices.ip_address, devices.mac_address, devices.hostname, devices.os_type, devices.role, devices.risk_score, devices.last_seen, devices.meta 
+FROM devices
+2026-02-01 22:49:05,555 INFO sqlalchemy.engine.Engine [cached since 18.58s ago] ()
+INFO:sqlalchemy.engine.Engine:[cached since 18.58s ago] ()
+INFO:     127.0.0.1:46256 - "GET /devices HTTP/1.1" 200 OK
+2026-02-01 22:49:05,557 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:     127.0.0.1:52312 - "GET /devices HTTP/1.1" 200 OK
+2026-02-01 22:49:05,560 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+2026-02-01 22:49:05,580 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+2026-02-01 22:49:05,581 INFO sqlalchemy.engine.Engine SELECT devices.id, devices.ip_address, devices.mac_address, devices.hostname, devices.os_type, devices.role, devices.risk_score, devices.last_seen, devices.meta 
+FROM devices
+INFO:sqlalchemy.engine.Engine:SELECT devices.id, devices.ip_address, devices.mac_address, devices.hostname, devices.os_type, devices.role, devices.risk_score, devices.last_seen, devices.meta 
+FROM devices
+2026-02-01 22:49:05,581 INFO sqlalchemy.engine.Engine [cached since 18.6s ago] ()
+INFO:sqlalchemy.engine.Engine:[cached since 18.6s ago] ()
+INFO:     127.0.0.1:46256 - "GET /devices HTTP/1.1" 200 OK
+2026-02-01 22:49:05,583 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:     127.0.0.1:51334 - "WebSocket /ws/traffic" [accepted]
+INFO:     connection open
+INFO:     Shutting down
+INFO:     connection closed
+INFO:     Waiting for background tasks to complete. (CTRL+C to force quit)
+INFO:     Finished server process [93797]
+INFO:     Stopping reloader process [93794]
