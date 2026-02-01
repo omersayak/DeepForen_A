@@ -89,10 +89,26 @@ if [ ! -f ".env" ]; then
     echo "ACCESS_TOKEN_EXPIRE_MINUTES=30" >> .env
 fi
 
-echo -e "${GREEN}   Starting API Server (0.0.0.0:8000)...${NC}"
-# Run in background, accessible from outside
-./venv/bin/uvicorn app.main:app --reload --port 8000 --host 0.0.0.0 > ../backend.log 2>&1 &
+echo -e "${GREEN}   Starting API Server (0.0.0.0:8080)...${NC}"
+# Run in background, accessible from outside. Removed --reload for stability on server.
+./venv/bin/uvicorn app.main:app --port 8080 --host 0.0.0.0 > ../backend.log 2>&1 &
 BACKEND_PID=$!
+
+# Wait for backend to be ready
+echo -ne "${YELLOW}   Waiting for API to initialize...${NC}"
+for i in {1..30}; do
+    if curl -s http://127.0.0.1:8080/health > /dev/null; then
+        echo -e "${GREEN} READY!${NC}"
+        break
+    fi
+    echo -ne "."
+    sleep 2
+    if [ $i -eq 30 ]; then
+        echo -e "${RED}\n❌ Backend failed to start. Check backend.log${NC}"
+        exit 1
+    fi
+done
+
 cd ..
 
 # --- 5. FRONTEND SETUP & RUN ---

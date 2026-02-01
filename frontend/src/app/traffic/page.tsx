@@ -93,7 +93,7 @@ export default function TrafficPage() {
         // Dynamic WebSocket URL
         const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
         const host = window.location.hostname;
-        const wsUrl = `${protocol}//${host}:8000/ws/traffic`;
+        const wsUrl = `${protocol}//${host}:8080/ws/traffic`;
 
         const connect = () => {
             const ws = new WebSocket(wsUrl);
