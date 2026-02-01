@@ -11,10 +11,14 @@ export default function TopologyPage() {
     const [selectedDevice, setSelectedDevice] = useState<any>(null);
     const [devices, setDevices] = useState<any[]>([]);
     const [isModalOpen, setModalOpen] = useState(false);
-
     // Fetch device list for the inventory table
     useEffect(() => {
-        getDevices().then(setDevices).catch(console.error);
+        getDevices()
+            .then(data => setDevices(Array.isArray(data) ? data : [])) // Ensure array
+            .catch(err => {
+                console.error("Failed to fetch devices:", err);
+                setDevices([]);
+            });
     }, []);
 
     const handleDeviceSelect = (device: any) => {

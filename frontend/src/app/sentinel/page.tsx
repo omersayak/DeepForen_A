@@ -20,7 +20,7 @@ export default function SentinelPage() {
         setLoading(true);
 
         try {
-            const response = await askSentinel(input);
+            const response: { answer: string } = await askSentinel(input);
 
             setMessages(prev => [...prev, {
                 role: 'system',
@@ -58,8 +58,8 @@ export default function SentinelPage() {
                             </div>
 
                             <div className={`max-w-[80%] p-4 rounded-2xl text-sm leading-relaxed ${msg.role === 'user'
-                                    ? 'bg-blue-600/20 text-blue-100 rounded-tr-none border border-blue-500/20'
-                                    : 'bg-white/5 text-gray-200 rounded-tl-none border border-white/10'
+                                ? 'bg-blue-600/20 text-blue-100 rounded-tr-none border border-blue-500/20'
+                                : 'bg-white/5 text-gray-200 rounded-tl-none border border-white/10'
                                 }`}>
                                 {msg.content}
                             </div>
